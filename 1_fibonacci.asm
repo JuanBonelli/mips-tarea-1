@@ -11,8 +11,8 @@ space: .asciiz "\n"
 
 main:
 
-li $t0, 0              #t0 = 0
-li $t1, 1              #t1 = 1
+li $t0, 0               #t0 = 0
+li $t1, 1               #t1 = 1
 
 #imprimimos t0
 li $v0, 1
@@ -41,24 +41,24 @@ loop:
 beq $t3, $zero, exit
 
 #loop
-add $t2, $t0, $t1      #c = a + b
+add $t2, $t0, $t1       #c = a + b
 
 #imprimimos t2
 li $v0, 1
 move $a0, $t2
 syscall
 
-move $t0, $t1          #  a = b
-move $t1, $t2          # b = c
+move $t0, $t1           #  a = b
+move $t1, $t2           # b = c
 
 #imprimimos el  \n
 li $v0, 4
 la $a0, space
 syscall
 
-addi $t3, $t3, -1     #restamos 1 al contador
+addi $t3, $t3, -1      #restamos 1 al contador
 
-j loop                #itera el ciclo
+j loop                 #itera el ciclo
 
 #exit
 exit:
